@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.HashSet;
 
 /**
@@ -6,6 +7,7 @@ import java.util.HashSet;
  */
 @SuppressWarnings("serial")
 public class Playlist<E extends Song> extends java.util.Vector<E> {
+    // TODO: Assignment 6 -- complete this Playlist class to pass the tests
     java.util.Iterator<E> itr = this.iterator();       // Generic Iterator; Use it whenever you need it!
 
     private String title;
@@ -20,7 +22,7 @@ public class Playlist<E extends Song> extends java.util.Vector<E> {
     }
 
     public boolean addtoPlist(E addSong){
-            // ensure song added is not null
+        // ensure song added is not null
         if(addSong == null){
             return false;
             // ensure no adding of duplicates
@@ -43,8 +45,8 @@ public class Playlist<E extends Song> extends java.util.Vector<E> {
     }
 
     public boolean hasArtist(String testArtist){
-        for (E Song: this){
-            if(Song.isArtist(testArtist)){
+        for (E song : this) {
+            if (song.isArtist(testArtist)) {
                 return true;
             }
         }
@@ -53,32 +55,32 @@ public class Playlist<E extends Song> extends java.util.Vector<E> {
 
     public int numberOfSongs(){
         int count = 0;
-        for (E Song: this){
+        for (E song : this) {
             count++;
         }
         return count;
     }
 
     public int numberOfArtists(){
-        HashSet<String> noDupSet = new HashSet<String>();
-        for (E Song: this){
-            noDupSet.add(Song.getArtist());
+        HashSet<String> noDupSet = new HashSet<>();
+        for (E song : this) {
+            noDupSet.add(song.getArtist());
         }
         return noDupSet.size();
     }
 
     public int numberOfTitles() {
-        HashSet<String> noDupSet = new HashSet<String>();
-        for (E Song: this){
-            noDupSet.add(Song.getTitle());
+        HashSet<String> noDupSet = new HashSet<>();
+        for (E song : this) {
+            noDupSet.add(song.getTitle());
         }
         return noDupSet.size();
     }
 
     public Double playTime() {
         Double playTime = 0.0;
-        for (E Song: this){
-            playTime += Song.getLength();
+        for (E song : this) {
+            playTime += song.getLength();
         }
         return playTime;
     }
@@ -87,5 +89,21 @@ public class Playlist<E extends Song> extends java.util.Vector<E> {
         return this.indexOf(song);
     }
 
-    // TODO: Assignment 6 -- complete this Playlist class to pass the tests
+    public void sortByArtist() {
+        this.sort(new Comparator<Song>() {
+            @Override
+            public int compare(Song s1, Song s2) {
+                return s1.getArtist().compareTo(s2.getArtist());
+            }
+        });
+    }
+
+    public void sortByTitle() {
+        this.sort(new Comparator<Song>() {
+            @Override
+            public int compare(Song s1, Song s2) {
+                return s1.getTitle().compareTo(s2.getTitle());
+            }
+        });
+    }
 }

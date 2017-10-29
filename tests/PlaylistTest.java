@@ -123,11 +123,24 @@ public class PlaylistTest extends TestCase {
 
     public void test_sortByArtist() {
         // TODO: Assignment 6 -- create new test case here: sort by artist
+        fillPlaylist();
+        aPlaylist.sortByArtist();
+        String lastArtist = aPlaylist.get(0).getArtist();
+        for (Song song : aPlaylist) {
+            assertTrue(song.getArtist().compareTo(lastArtist) >= 0);
+            lastArtist = song.getArtist();
+        }
 
     }
 
     public void test_sortByTitle() {
         // TODO: Assignment 6 -- create new test case here: sort by title
-
+        fillPlaylist();
+        aPlaylist.sortByTitle();
+        String lastTitle = aPlaylist.get(0).getTitle();
+        for (Song song : aPlaylist) {
+            assertTrue(song.getTitle().compareTo(lastTitle) >= 0);
+            lastTitle = song.getTitle();
+        }
     }
 }
