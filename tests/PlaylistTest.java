@@ -1,4 +1,5 @@
 import junit.framework.TestCase;
+
 import java.util.Vector;
 
 public class PlaylistTest extends TestCase {
