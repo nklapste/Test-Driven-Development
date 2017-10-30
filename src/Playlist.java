@@ -4,6 +4,9 @@ import java.util.HashSet;
 /**
  * Assignment 6: Test Driven Development <br />
  * The {@code Playlist} class
+ *
+ * Name: Nathan Klapstein
+ * ID: 1449872
  */
 @SuppressWarnings("serial")
 public class Playlist<E extends Song> extends java.util.Vector<E> {
