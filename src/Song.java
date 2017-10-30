@@ -1,6 +1,9 @@
 /**
  * Assignment 6: Test Driven Development <br />
  * The {@code Song} class
+ *
+ * Name: Nathan Klapstein
+ * ID: 1449872
  */
 public class Song {
     // TODO: Assignment 6 -- complete this Song class to pass the tests
