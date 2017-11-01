@@ -10,7 +10,7 @@ import java.util.HashSet;
  */
 @SuppressWarnings("serial")
 public class Playlist<E extends Song> extends java.util.Vector<E> {
-    // TODO: Assignment 6 -- complete this Playlist class to pass the tests
+    // Assignment 6 -- complete this Playlist class to pass the tests
     java.util.Iterator<E> itr = this.iterator();       // Generic Iterator; Use it whenever you need it!
 
     private String title;

@@ -2,6 +2,12 @@ import junit.framework.TestCase;
 
 import java.util.Vector;
 
+/**
+ * Assignment 6: Test Driven Development <br />
+ *
+ * Name: Nathan Klapstein
+ * ID: 1449872
+ */
 public class PlaylistTest extends TestCase {
 
     private Playlist<Song> aPlaylist;
@@ -122,7 +128,7 @@ public class PlaylistTest extends TestCase {
     }
 
     public void test_sortByArtist() {
-        // TODO: Assignment 6 -- create new test case here: sort by artist
+        // Assignment 6 -- create new test case here: sort by artist
         fillPlaylist();
         aPlaylist.sortByArtist();
         String lastArtist = aPlaylist.get(0).getArtist();
@@ -134,7 +140,7 @@ public class PlaylistTest extends TestCase {
     }
 
     public void test_sortByTitle() {
-        // TODO: Assignment 6 -- create new test case here: sort by title
+        // Assignment 6 -- create new test case here: sort by title
         fillPlaylist();
         aPlaylist.sortByTitle();
         String lastTitle = aPlaylist.get(0).getTitle();

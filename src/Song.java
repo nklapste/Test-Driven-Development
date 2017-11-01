@@ -6,7 +6,7 @@
  * ID: 1449872
  */
 public class Song {
-    // TODO: Assignment 6 -- complete this Song class to pass the tests
+    // Assignment 6 -- complete this Song class to pass the tests
     private String artist, title;
     private Double length;
 
