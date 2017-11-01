@@ -57,11 +57,7 @@ public class Playlist<E extends Song> extends java.util.Vector<E> {
     }
 
     public int numberOfSongs() {
-        int count = 0;
-        for (E song : this) {
-            count++;
-        }
-        return count;
+        return this.size();
     }
 
     public int numberOfArtists() {
