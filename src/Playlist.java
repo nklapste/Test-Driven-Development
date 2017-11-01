@@ -4,7 +4,7 @@ import java.util.HashSet;
 /**
  * Assignment 6: Test Driven Development <br />
  * The {@code Playlist} class
- *
+ * <p>
  * Name: Nathan Klapstein
  * ID: 1449872
  */
@@ -15,7 +15,7 @@ public class Playlist<E extends Song> extends java.util.Vector<E> {
 
     private String title;
 
-    public Playlist(String Title){
+    public Playlist(String Title) {
         super(0, 1);
         this.title = Title;
     }
@@ -24,30 +24,30 @@ public class Playlist<E extends Song> extends java.util.Vector<E> {
         return this.title;
     }
 
-    public boolean addtoPlist(E addSong){
+    public boolean addtoPlist(E addSong) {
         // ensure song added is not null
-        if(addSong == null){
+        if (addSong == null) {
             return false;
             // ensure no adding of duplicates
-        } else if (this.findSong(addSong) >= 0){
+        } else if (this.findSong(addSong) >= 0) {
             return false;
         }
         return this.add(addSong);
     }
 
-    public boolean removeFromPlist(E removeSong){
-        return  this.remove(removeSong);
+    public boolean removeFromPlist(E removeSong) {
+        return this.remove(removeSong);
     }
 
-    public Song getSong(int songIndex){
+    public Song getSong(int songIndex) {
         return this.elementAt(songIndex);
     }
 
-    public boolean hasTitle(String testTitle){
+    public boolean hasTitle(String testTitle) {
         return this.title.equals(testTitle);
     }
 
-    public boolean hasArtist(String testArtist){
+    public boolean hasArtist(String testArtist) {
         for (E song : this) {
             if (song.isArtist(testArtist)) {
                 return true;
@@ -56,7 +56,7 @@ public class Playlist<E extends Song> extends java.util.Vector<E> {
         return false;
     }
 
-    public int numberOfSongs(){
+    public int numberOfSongs() {
         int count = 0;
         for (E song : this) {
             count++;
@@ -64,7 +64,7 @@ public class Playlist<E extends Song> extends java.util.Vector<E> {
         return count;
     }
 
-    public int numberOfArtists(){
+    public int numberOfArtists() {
         HashSet<String> noDupSet = new HashSet<>();
         for (E song : this) {
             noDupSet.add(song.getArtist());

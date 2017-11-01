@@ -4,7 +4,7 @@ import java.util.Vector;
 
 /**
  * Assignment 6: Test Driven Development <br />
- *
+ * <p>
  * Name: Nathan Klapstein
  * ID: 1449872
  */
@@ -14,7 +14,7 @@ public class PlaylistTest extends TestCase {
     private Song song1, song2, song3, song4, duplicate_song, nullSong;
 
     public void setUp() {
-        aPlaylist= new Playlist<Song>("Playlist Title");
+        aPlaylist = new Playlist<Song>("Playlist Title");
         song1 = new Song("Artist1", "Title1", 5.00);
         song2 = new Song("Artist1", "Title2", 4.50);
         song3 = new Song("Artist2", "Title1", 4.00);
@@ -108,6 +108,7 @@ public class PlaylistTest extends TestCase {
         fillPlaylist();
         assertEquals(2, aPlaylist.numberOfArtists());
     }
+
     public void test_numberOfTitles() {
         fillPlaylist();
         assertEquals(3, aPlaylist.numberOfTitles());

@@ -1,7 +1,7 @@
 /**
  * Assignment 6: Test Driven Development <br />
  * The {@code Song} class
- *
+ * <p>
  * Name: Nathan Klapstein
  * ID: 1449872
  */
@@ -10,12 +10,13 @@ public class Song {
     private String artist, title;
     private Double length;
 
-    public Song(String artist, String title, float length){
+    public Song(String artist, String title, float length) {
         this.artist = artist;
         this.title = title;
         this.length = (double) length;
     }
-    public Song(String artist, String title, double length){
+
+    public Song(String artist, String title, double length) {
         this.artist = artist;
         this.title = title;
         this.length = length;
@@ -33,11 +34,11 @@ public class Song {
         return title;
     }
 
-    public boolean isArtist(String testArtist){
+    public boolean isArtist(String testArtist) {
         return this.artist.toLowerCase().equals(testArtist.toLowerCase());
     }
 
-    public boolean isTitle(String testTitle){
+    public boolean isTitle(String testTitle) {
         return this.title.toLowerCase().equals(testTitle.toLowerCase());
     }
 
